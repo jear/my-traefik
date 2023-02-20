@@ -1,0 +1,15 @@
+# dashboard.yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: my-traefik
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`traefik-dashboard.gpu03.lysdemolab.fr`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
+
