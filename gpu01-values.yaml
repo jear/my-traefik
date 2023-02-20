@@ -1,0 +1,22 @@
+# traefik2-helm-values.yaml
+additionalArguments:
+#  - "--log.level=DEBUG"
+  - "--certificatesresolvers.letsencrypt.acme.email=youremail@gmail.com"
+#  - --certificatesresolvers.cloudflare.acme.email=mail@example.com
+  - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
+#  - --certificatesresolvers.cloudflare.acme.storage=/certs/acme.json
+  - "--certificatesResolvers.letsencrypt.acme.tlsChallenge=true"
+  - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+#  - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+  - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+#  - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
+#  - --certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1
+  - --entrypoints.websecure.http.tls.certresolver=letsencrypt
+#  - --entrypoints.websecure.http.tls.certresolver=cloudflare
+  - --entrypoints.websecure.http.tls.domains[0].main=83-206-89.104.traefik.me
+  - --entrypoints.websecure.http.tls.domains[0].sans=*.83-206-89.104.traefik.me
+
+ports:
+  web:
+    redirectTo: websecure
+
