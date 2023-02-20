@@ -1,5 +1,12 @@
 # my-traefik
 ```
+# https://traefik.io/blog/install-and-configure-traefik-with-helm/
+
+
+# helm repo add traefik https://helm.traefik.io/traefik
+helm repo add traefik https://traefik.github.io/charts
+helm repo update
+
 helm repo list
 traefik                 https://traefik.github.io/charts
 
