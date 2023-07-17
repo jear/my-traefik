@@ -27,5 +27,9 @@ tar zxvf traefik-21.1.0.tgz
 cp traefik/values.yaml my-values-21.1.0.yaml
 rm -fr traefik && rm traefik-21.1.0.tgz
 
-helm install my-traefik traefik/traefik  -f my-values-21.1.0.yaml --namespace traefik-v2 --create-namespace
+# helm install my-traefik traefik/traefik  -f my-values-21.1.0.yaml --namespace traefik-v2 --create-namespace
+
+helm upgrade --install my-traefik traefik/traefik  --namespace traefik-v2 --create-namespace -f gpu01-values.yaml
+
+
 ```
