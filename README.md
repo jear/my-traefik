@@ -2,8 +2,6 @@
 ```
 # https://traefik.io/blog/install-and-configure-traefik-with-helm/
 
-# ipwhitelist  .....   externalTrafficPolicy 
-https://community.traefik.io/t/limiting-clients-to-specific-ips-ipwhitelist/9568/3
 
 # helm repo add traefik https://helm.traefik.io/traefik
 helm repo add traefik https://traefik.github.io/charts
@@ -33,5 +31,10 @@ rm -fr traefik && rm traefik-21.1.0.tgz
 
 helm upgrade --install my-traefik traefik/traefik  --namespace traefik-v2 --create-namespace -f gpu01-values.yaml
 
+# ipwhitelist  .....   externalTrafficPolicy 
+https://community.traefik.io/t/limiting-clients-to-specific-ips-ipwhitelist/9568/3
 
+kubectl edit svc
+k edit svc -n traefik-v2 my-traefik 
+  externalTrafficPolicy: Local
 ```
