@@ -34,7 +34,6 @@ helm upgrade --install my-traefik traefik/traefik  --namespace traefik-v2 --crea
 # ipwhitelist  .....   externalTrafficPolicy 
 https://community.traefik.io/t/limiting-clients-to-specific-ips-ipwhitelist/9568/3
 
-kubectl edit svc
 k edit svc -n traefik-v2 my-traefik 
   externalTrafficPolicy: Local
 ```
