@@ -2,6 +2,8 @@
 ```
 # https://traefik.io/blog/install-and-configure-traefik-with-helm/
 
+# ipwhitelist  .....   externalTrafficPolicy 
+https://community.traefik.io/t/limiting-clients-to-specific-ips-ipwhitelist/9568/3
 
 # helm repo add traefik https://helm.traefik.io/traefik
 helm repo add traefik https://traefik.github.io/charts
