@@ -10,7 +10,7 @@ helm repo update
 helm repo list
 traefik                 https://traefik.github.io/charts
 
-helm search repo traefik
+helm search repo traefik -l
 WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/ubuntu/.kube/gpu01.yaml
 WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /home/ubuntu/.kube/gpu01.yaml
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION
@@ -20,7 +20,7 @@ traefik/traefikee       1.7.0           v2.9.1          Traefik Enterprise is a 
 traefik/hub-agent       1.2.2           v1.1.0          Traefik Hub is an all-in-one global networking ...
 traefik/maesh           2.1.2           v1.3.2          Maesh - Simpler Service Mesh
 
-helm fetch traefik/traefik
+helm fetch traefik/traefik --version 21.1.0
 
 tar zxvf traefik-21.1.0.tgz
 
@@ -29,7 +29,7 @@ rm -fr traefik && rm traefik-21.1.0.tgz
 
 # helm install my-traefik traefik/traefik  -f my-values-21.1.0.yaml --namespace traefik-v2 --create-namespace
 
-helm upgrade --install my-traefik traefik/traefik  --namespace traefik-v2 --create-namespace -f gpu01-values.yaml
+helm upgrade --install my-traefik traefik/traefik  --namespace traefik-v2 --create-namespace -f gpu01-values.yaml --version 21.1.0
 
 # ipwhitelist  .....   externalTrafficPolicy 
 https://community.traefik.io/t/limiting-clients-to-specific-ips-ipwhitelist/9568/3
