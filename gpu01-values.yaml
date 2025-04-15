@@ -13,8 +13,8 @@ additionalArguments:
 #  - --certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1
   - --entrypoints.websecure.http.tls.certresolver=letsencrypt
 #  - --entrypoints.websecure.http.tls.certresolver=cloudflare
-  - --entrypoints.websecure.http.tls.domains[0].main=83-206-89.104.traefik.me
-  - --entrypoints.websecure.http.tls.domains[0].sans=*.83-206-89.104.traefik.me
+  - --entrypoints.websecure.http.tls.domains[0].main=83-206-89-104.traefik.me
+  - --entrypoints.websecure.http.tls.domains[0].sans=*.83-206-89-104.traefik.me
 
 ports:
   web:
